@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import LenisProvider from '@/components/LenisProvider';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '@/components/Preloader';
@@ -9,6 +9,7 @@ import Hero from '@/components/Hero';
 import TrustBar from '@/components/TrustBar';
 import AboutUs from '@/components/AboutUs';
 import ServicesGrid from '@/components/ServicesGrid';
+import IntroVideoPlayer from '@/components/IntroVideoPlayer';
 import ProductHorizontalGallery from '@/components/ProductHorizontalGallery';
 import RoofBuildSteps from '@/components/RoofBuildSteps';
 import HouseBuilderAnimation from '@/components/HouseBuilderAnimation';
@@ -25,7 +26,7 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [logoTheme, setLogoTheme] = useState<LogoTheme>('classic');
 
-  // Dynamically update CSS Variables when logo color theme changes
+  // Dynamically update CSS Variables on document.documentElement
   const applyLogoTheme = (theme: LogoTheme) => {
     setLogoTheme(theme);
     if (typeof document === 'undefined') return;
@@ -33,20 +34,32 @@ export default function Home() {
 
     if (theme === 'classic') {
       root.style.setProperty('--primary', '#E07A00');
+      root.style.setProperty('--primary-rgb', '224, 122, 0');
       root.style.setProperty('--secondary', '#007A4D');
+      root.style.setProperty('--secondary-rgb', '0, 122, 77');
       root.style.setProperty('--accent', '#1D5288');
+      root.style.setProperty('--accent-rgb', '29, 82, 136');
     } else if (theme === 'gold') {
       root.style.setProperty('--primary', '#F59E0B');
+      root.style.setProperty('--primary-rgb', '245, 158, 11');
       root.style.setProperty('--secondary', '#2563EB');
+      root.style.setProperty('--secondary-rgb', '37, 99, 235');
       root.style.setProperty('--accent', '#7C3AED');
+      root.style.setProperty('--accent-rgb', '124, 58, 237');
     } else if (theme === 'crimson') {
       root.style.setProperty('--primary', '#EF4444');
+      root.style.setProperty('--primary-rgb', '239, 68, 68');
       root.style.setProperty('--secondary', '#F97316');
+      root.style.setProperty('--secondary-rgb', '249, 115, 22');
       root.style.setProperty('--accent', '#3B82F6');
+      root.style.setProperty('--accent-rgb', '59, 130, 246');
     } else if (theme === 'cyan') {
       root.style.setProperty('--primary', '#06B6D4');
+      root.style.setProperty('--primary-rgb', '6, 182, 212');
       root.style.setProperty('--secondary', '#10B981');
+      root.style.setProperty('--secondary-rgb', '16, 185, 129');
       root.style.setProperty('--accent', '#6366F1');
+      root.style.setProperty('--accent-rgb', '99, 102, 241');
     }
   };
 
@@ -81,6 +94,7 @@ export default function Home() {
         <TrustBar />
         <AboutUs />
         <ServicesGrid onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+        <IntroVideoPlayer onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
         <ProductHorizontalGallery onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
         <RoofBuildSteps />
         <HouseBuilderAnimation onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />

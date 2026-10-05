@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Menu, X, Sun, Moon, ShieldCheck, ArrowRight, Palette } from 'lucide-react';
 import siteData from '@/content/site-data.json';
+import BrandLogo from './BrandLogo';
 
 export type LogoTheme = 'classic' | 'gold' | 'crimson' | 'cyan';
 
@@ -48,6 +48,7 @@ export default function Navbar({
     { name: 'About Us', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Products', href: '#products' },
+    { name: 'Video Showcase', href: '#intro-video' },
     { name: 'Installation', href: '#installation' },
     { name: 'House Builder', href: '#house-builder' },
     { name: 'Projects', href: '#projects' },
@@ -96,25 +97,10 @@ export default function Navbar({
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo Brand */}
-          <Link href="#hero" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 md:w-12 md:h-12 flex-shrink-0 bg-white p-1 rounded-xl shadow-md group-hover:scale-105 transition-transform overflow-hidden">
-              <Image
-                src="https://godavariroofing.com/wp-content/uploads/2024/09/GODAVARI.png"
-                alt="Godavari Roofing Logo"
-                fill
-                className="object-contain p-0.5"
-                unoptimized
-              />
-            </div>
-            <div className="flex flex-col">
-              <div className="text-base sm:text-lg md:text-xl font-bold font-display tracking-tight text-white flex items-center gap-1">
-                GODAVARI <span className="text-primary transition-colors">ROOFING</span>
-              </div>
-              <span className="text-[10px] md:text-xs font-semibold text-secondary-light tracking-wider uppercase transition-colors">
-                INDUSTRIES
-              </span>
-            </div>
+          
+          {/* Dynamic SVG Brand Logo */}
+          <Link href="#hero" className="group">
+            <BrandLogo />
           </Link>
 
           {/* Desktop Nav Items */}
@@ -123,7 +109,7 @@ export default function Navbar({
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-1.5 text-xs xl:text-sm font-semibold text-slate-200 hover:text-primary transition-colors rounded-lg hover:bg-white/5"
+                className="px-2.5 py-1.5 text-xs xl:text-sm font-semibold text-slate-200 hover:text-primary transition-colors rounded-lg hover:bg-white/5"
               >
                 {link.name}
               </a>
@@ -140,7 +126,7 @@ export default function Navbar({
                 title="Change Logo Color Theme"
               >
                 <Palette className="w-4 h-4 text-primary" />
-                <span className="hidden xl:inline text-slate-200">Logo Colors</span>
+                <span className="hidden xl:inline text-slate-200">Logo Theme</span>
               </button>
 
               {/* Logo Theme Palette Dropdown */}
@@ -164,7 +150,7 @@ export default function Navbar({
                         }}
                         className={`w-full p-2 rounded-xl text-left text-xs font-semibold flex items-center justify-between transition-colors ${
                           logoTheme === opt.id
-                            ? 'bg-slate-800 text-white border border-primary/50'
+                            ? 'bg-slate-800 text-white border border-primary'
                             : 'text-slate-300 hover:bg-slate-800/60'
                         }`}
                       >
@@ -243,21 +229,7 @@ export default function Navbar({
             className="fixed inset-0 z-50 bg-[#0B131F]/98 backdrop-blur-xl md:hidden flex flex-col justify-between p-6 overflow-y-auto"
           >
             <div className="flex items-center justify-between pb-6 border-b border-slate-800">
-              <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10 bg-white p-1 rounded-xl">
-                  <Image
-                    src="https://godavariroofing.com/wp-content/uploads/2024/09/GODAVARI.png"
-                    alt="Logo"
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
-                </div>
-                <div>
-                  <div className="font-bold text-white text-base">GODAVARI ROOFING</div>
-                  <div className="text-xs text-secondary-light font-semibold">INDUSTRIES</div>
-                </div>
-              </div>
+              <BrandLogo />
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-2 rounded-lg bg-slate-800 text-slate-300"
