@@ -1,0 +1,214 @@
+{
+  "company": {
+    "name": "Godavari Roofing Industries",
+    "legalName": "Godavari Roofing Industries Pvt. Ltd.",
+    "certification": "AN ISO 9001:2015 Certified Company",
+    "partner": "Authorised Partner with JSW Steel Ltd (JSW Indradhanush+)",
+    "tagline": "Strong. Durable. Weatherproof.",
+    "subTagline": "Elevating the standard of roofing with high-precision engineering and premium materials.",
+    "foundedYear": 2012,
+    "stats": {
+      "yearsExperience": 14,
+      "projectsCompleted": 2500,
+      "happyCustomers": 2200,
+      "sheetTypesAvailable": 18
+    },
+    "about": {
+      "short": "Godavari Roofing Industries is a leading provider of high-quality roofing solutions, committed to excellence, structural safety, and customer satisfaction across Andhra Pradesh and South India.",
+      "mission": "To provide a seamless and professional roofing and structural steel experience that places customer satisfaction, weatherproofing performance, and long-term durability at the center of every project.",
+      "vision": "To elevate the architectural standard of residential, commercial, and industrial roofing through innovative materials, precision craftsmanship, and sustainable practices."
+    }
+  },
+  "contact": {
+    "phone": "+91 98886 86555",
+    "alternatePhone": "+91 98886 86555 [TODO: confirm secondary number]",
+    "email": "info@godavariroofing.com [TODO: confirm email from client]",
+    "address": "270-1, NH16, Opposite HP Petrol Pump, Ravulapalem, East Godavari District, Andhra Pradesh 533238",
+    "workingHours": "Monday - Saturday: 8:30 AM - 7:30 PM | Sunday: Closed",
+    "mapEmbedUrl": "https://maps.google.com/maps?q=GODAVARI%20ROOFING%20INDUSTRIES%20270-1%2C%20NH16%2C%20opposite%20HP%20PETROL%20PUMP%2C%20Ravulapalem%2C%20Andhra%20Pradesh%20533238&t=m&z=14&output=embed&iwloc=near",
+    "whatsappNumber": "919888686555",
+    "social": {
+      "facebook": "https://facebook.com/godavariroofing",
+      "instagram": "https://instagram.com/godavariroofing",
+      "youtube": "https://youtube.com/godavariroofing",
+      "linkedin": "https://linkedin.com/company/godavariroofing"
+    }
+  },
+  "products": [
+    {
+      "id": "color-coated-sheets",
+      "name": "JSW Indradhanush+ Color Coated Sheets",
+      "category": "Color Coated",
+      "description": "Advanced multi-layer protected color coated steel sheets offering superior corrosion resistance, high solar reflectance, and vibrant long-lasting aesthetic appeal.",
+      "thickness": "0.35mm - 0.80mm",
+      "colors": ["Tile Red", "Royal Blue", "Off White", "Turquoise Green", "Terracotta Orange"],
+      "image": "https://godavariroofing.com/wp-content/uploads/2024/09/rooding-sheets-2-1024x1024.png",
+      "features": ["Anti-Corrosive Primer Layer", "UV Resisting Paint", "High Tensile Steel Core", "15+ Years Warranty"]
+    },
+    {
+      "id": "tile-profile-sheets",
+      "name": "Mangalore Tile Profile Roofing Sheets",
+      "category": "Tile Profile",
+      "description": "Combines the traditional elegance of clay roof tiles with the high structural strength and lightweight advantage of modern prepainted metal sheets.",
+      "thickness": "0.45mm - 0.60mm",
+      "colors": ["Terracotta Red", "Deep Green", "Charcoal Slate"],
+      "image": "https://godavariroofing.com/wp-content/uploads/2024/09/tile-profile-roofing-sheets-2-1024x1024.png",
+      "features": ["Classic Clay Tile Look", "Zero Water Leakage", "Lightweight Structural Load", "Easy Fastening"]
+    },
+    {
+      "id": "cz-purlins",
+      "name": "C & Z Galvanized Purlins",
+      "category": "Structural Steel",
+      "description": "High-tensile cold-formed steel C and Z purlins designed for optimal roof structural framing, providing maximum support with reduced overall steel weight.",
+      "thickness": "1.5mm - 3.0mm",
+      "colors": ["Galvanized Silver"],
+      "image": "https://godavariroofing.com/wp-content/uploads/2024/09/godavari--1024x1024.png",
+      "features": ["Pre-punched Bolt Holes", "High Load-to-Weight Ratio", "Rust Inhibiting Coating", "Custom Length Cut"]
+    },
+    {
+      "id": "polycarbonate-sheets",
+      "name": "Multiwall Polycarbonate Skylight Sheets",
+      "category": "Polycarbonate",
+      "description": "Ultra-durable, UV-stabilized clear and tinted polycarbonate sheets designed for natural daylighting in industrial sheds, verandas, and skylights.",
+      "thickness": "2.0mm - 10.0mm",
+      "colors": ["Clear Glass", "Bronze Tint", "Opal White", "Ocean Blue"],
+      "image": "https://godavariroofing.com/wp-content/uploads/2024/09/poly-carbonate-sheets-2-1024x1024.png",
+      "features": ["85% Light Transmission", "200x Stronger than Glass", "99% UV Blocking", "Impact Resistant"]
+    },
+    {
+      "id": "turbo-ventilators",
+      "name": "Stainless Steel Wind-Driven Turbo Ventilators",
+      "category": "Ventilation",
+      "description": "Eco-friendly, zero-electricity rooftop exhaust ventilators that continuously draw out hot air, fumes, and humidity from warehouses and factories.",
+      "thickness": "Grade 304 Stainless Steel",
+      "colors": ["Metallic Silver"],
+      "image": "https://godavariroofing.com/wp-content/uploads/2024/09/godavari-1-1024x1024.png",
+      "features": ["Zero Electricity Cost", "Silent Sealed Bearings", "Rain-proof Louvers", "24/7 Air Exchange"]
+    },
+    {
+      "id": "ppgl-gl-coils",
+      "name": "PPGL & Galvalume Coils",
+      "category": "Raw Steel Coils",
+      "description": "Premium grade Pre-Painted Galvalume (PPGL) and Bare Galvalume steel coils manufactured by JSW Steel for roll-forming and industrial cladding.",
+      "thickness": "0.30mm - 1.20mm",
+      "colors": ["Aluzinc Silver", "Custom Coated"],
+      "image": "https://godavariroofing.com/wp-content/uploads/2024/09/MDP_1663-1024x681.jpg",
+      "features": ["55% Al-Zn Alloy Coating", "Superior Thermal Reflectivity", "High Formability", "ASTM Standard Compliant"]
+    }
+  ],
+  "services": [
+    {
+      "id": "residential-roofing",
+      "name": "Residential Roofing Solutions",
+      "icon": "Home",
+      "short": "Complete home roofing installations, villa shed additions, and architectural tile profile roofing tailored for longevity and curb appeal.",
+      "details": "We transform residential spaces with durable, insulated, and aesthetically pleasing roofing systems engineered to withstand intense tropical heat and heavy monsoon rain."
+    },
+    {
+      "id": "commercial-industrial",
+      "name": "Commercial & PEB Shed Solutions",
+      "icon": "Building2",
+      "short": "Turnkey Pre-Engineered Building (PEB) roofs, factory sheds, agricultural godowns, and warehouse structural steel framing.",
+      "details": "Custom engineered industrial roofing projects delivered on tight schedules with zero compromise on wind-load safety and structural integrity."
+    },
+    {
+      "id": "renovation-restoration",
+      "name": "Roof Renovation & Waterproof Coating",
+      "icon": "Wrench",
+      "short": "Replacing old asbestos/corrosion sheets, applying elastomeric waterproof coatings, and retrofitting existing roof structures.",
+      "details": "Breathe new life into aging roofs with non-disruptive sheet replacement, leak proofing, and heat-reflective roof coatings."
+    },
+    {
+      "id": "daylight-ventilation",
+      "name": "Skylight & Ventilation Systems",
+      "icon": "Sun",
+      "short": "Integration of polycarbonate skylight strips and wind-driven turbo ventilators for natural lighting and temperature control.",
+      "details": "Reduce energy bills by up to 30% by combining high-transmission daylighting sheets with self-driven roof exhaust fans."
+    }
+  ],
+  "installationSteps": [
+    {
+      "step": 1,
+      "title": "Site Inspection & Digital Measurement",
+      "desc": "Laser measurement of span, slope gradient, wall anchor points, and structural load analysis.",
+      "icon": "Ruler"
+    },
+    {
+      "step": 2,
+      "title": "Design & Material Selection",
+      "desc": "Custom selection of JSW sheet profiles, gauge thickness, color finish, and purlin spacing.",
+      "icon": "Compass"
+    },
+    {
+      "step": 3,
+      "title": "Framework & Purlin Structure",
+      "desc": "Erection of high-strength C/Z galvanized purlins and heavy-duty steel rafters with precision welding.",
+      "icon": "Grid"
+    },
+    {
+      "step": 4,
+      "title": "Underlayment & Waterproof Layer",
+      "desc": "Laying anti-condensation thermal insulation felt and leak-barrier membrane.",
+      "icon": "ShieldCheck"
+    },
+    {
+      "step": 5,
+      "title": "Sheet Installation & Interlock",
+      "desc": "Precision sliding and lap-interlocking of color coated sheets with crest sealing.",
+      "icon": "Layers"
+    },
+    {
+      "step": 6,
+      "title": "Fasteners, Flashing & Ridge Capping",
+      "desc": "Securing with EPDM washer self-drilling screws, installing custom ridge caps and gutter downspouts.",
+      "icon": "Hammer"
+    },
+    {
+      "step": 7,
+      "title": "Final Quality Check & Handover",
+      "desc": "Water spray leak testing, alignment inspection, cleanup, and issuance of warranty certificate.",
+      "icon": "CheckCircle2"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "K. Venkateswara Rao",
+      "location": "Rajahmundry",
+      "role": "Residential House Owner",
+      "comment": "Godavari Roofing installed tile profile sheets for our modern villa roof. The quality of JSW sheets and the precision of their framing crew is top-notch!",
+      "rating": 5
+    },
+    {
+      "name": "Srinivas Reddy",
+      "location": "Ravulapalem",
+      "role": "Rice Mill Owner",
+      "comment": "We covered our 15,000 sq ft industrial godown with Godavari Roofing's color-coated sheets and turbo ventilators. Heat inside dropped significantly!",
+      "rating": 5
+    },
+    {
+      "name": "P. Ramesh Kumar",
+      "location": "Kakinada",
+      "role": "Commercial Complex Builder",
+      "comment": "Their team completed our commercial shed ahead of deadline. Prompt service, transparent pricing, and genuine ISO certified quality.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What makes JSW Indradhanush+ color coated sheets superior?",
+      "a": "JSW Indradhanush+ sheets use advanced zinc-aluminum alloy coating with UV-resistant paint technology, ensuring up to 3x longer life against rust compared to ordinary GI sheets."
+    },
+    {
+      "q": "Do you provide installation services along with material supply?",
+      "a": "Yes! We offer complete turnkey services including structural purlin fabrication, sheet supply, professional installation, and post-installation maintenance."
+    },
+    {
+      "q": "How long does a typical residential metal roof installation take?",
+      "a": "Most residential roofs (1,000 to 3,000 sq. ft.) are fabricated and fully installed within 3 to 5 working days depending on structural design complexity."
+    },
+    {
+      "q": "Can polycarbonate sheets withstand extreme hail and wind?",
+      "a": "Yes, high-grade polycarbonate sheets are up to 200 times stronger than glass and engineered to withstand high wind velocity and heavy impacts."
+    }
+  ]
+}
