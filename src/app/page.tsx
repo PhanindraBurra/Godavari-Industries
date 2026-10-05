@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import LenisProvider from '@/components/LenisProvider';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '@/components/Preloader';
@@ -25,12 +25,11 @@ export default function Home() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const toggleTheme = () => {
-    const nextMode = !isDarkMode;
-    setIsDarkMode(nextMode);
+  // Initialize theme class on mount
+  useEffect(() => {
     if (typeof document !== 'undefined') {
       const root = document.documentElement;
-      if (nextMode) {
+      if (isDarkMode) {
         root.classList.remove('light');
         root.classList.add('dark');
       } else {
@@ -38,6 +37,10 @@ export default function Home() {
         root.classList.add('light');
       }
     }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode((prev) => !prev);
   };
 
   return (
