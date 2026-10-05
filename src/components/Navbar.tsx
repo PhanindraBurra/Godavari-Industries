@@ -3,37 +3,23 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Menu, X, Sun, Moon, ShieldCheck, ArrowRight, Palette } from 'lucide-react';
+import { Phone, Menu, X, Sun, Moon, ShieldCheck, ArrowRight } from 'lucide-react';
 import siteData from '@/content/site-data.json';
 import BrandLogo from './BrandLogo';
-
-export type LogoTheme = 'classic' | 'gold' | 'crimson' | 'cyan';
 
 interface NavbarProps {
   onOpenQuoteModal: () => void;
   isDarkMode: boolean;
   toggleTheme: () => void;
-  logoTheme: LogoTheme;
-  changeLogoTheme: (theme: LogoTheme) => void;
 }
-
-const themeOptions: { id: LogoTheme; name: string; primary: string; secondary: string }[] = [
-  { id: 'classic', name: 'Original Logo (Amber / Emerald)', primary: '#E07A00', secondary: '#007A4D' },
-  { id: 'gold', name: 'Royal Gold & Sapphire', primary: '#F59E0B', secondary: '#2563EB' },
-  { id: 'crimson', name: 'Fire Red & Amber', primary: '#EF4444', secondary: '#F97316' },
-  { id: 'cyan', name: 'Ocean Cyan & Emerald', primary: '#06B6D4', secondary: '#10B981' },
-];
 
 export default function Navbar({
   onOpenQuoteModal,
   isDarkMode,
   toggleTheme,
-  logoTheme,
-  changeLogoTheme,
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [paletteOpen, setPaletteOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,8 +47,8 @@ export default function Navbar({
       <div className="bg-[#070D17] text-slate-300 text-xs py-2 px-4 border-b border-slate-800/80 hidden lg:block z-40 relative">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-secondary-light font-medium">
-              <ShieldCheck className="w-4 h-4 text-secondary-light" />
+            <span className="flex items-center gap-1.5 text-secondary font-medium">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
               {siteData.company.certification}
             </span>
             <span className="text-slate-400">
@@ -92,13 +78,13 @@ export default function Navbar({
       <header
         className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'top-0 py-2.5 bg-[#0B131F]/95 backdrop-blur-md shadow-2xl border-b border-white/10'
-            : 'top-0 lg:top-8 py-3.5 bg-gradient-to-b from-[#0B131F]/90 via-[#0B131F]/60 to-transparent backdrop-blur-sm'
+            ? 'top-0 py-2.5 bg-slate-900/95 dark:bg-[#0B131F]/95 backdrop-blur-md shadow-2xl border-b border-slate-800 dark:border-white/10'
+            : 'top-0 lg:top-8 py-3.5 bg-gradient-to-b from-slate-900/90 dark:from-[#0B131F]/90 via-transparent to-transparent backdrop-blur-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Dynamic SVG Brand Logo */}
+          {/* Dynamic Brand Logo */}
           <Link href="#hero" className="group">
             <BrandLogo />
           </Link>
@@ -109,70 +95,27 @@ export default function Navbar({
               <a
                 key={link.name}
                 href={link.href}
-                className="px-2.5 py-1.5 text-xs xl:text-sm font-semibold text-slate-200 hover:text-primary transition-colors rounded-lg hover:bg-white/5"
+                className="px-2.5 py-1.5 text-xs xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* Right Action CTA Buttons, Light/Dark & Logo Color Palette Switcher */}
-          <div className="hidden md:flex items-center gap-2.5">
-            {/* Logo Color Palette Selector Button */}
-            <div className="relative">
-              <button
-                onClick={() => setPaletteOpen(!paletteOpen)}
-                className="p-2.5 rounded-full bg-slate-800/90 text-amber-400 hover:bg-slate-700 transition-colors border border-slate-700 flex items-center gap-1.5 text-xs font-bold"
-                title="Change Logo Color Theme"
-              >
-                <Palette className="w-4 h-4 text-primary" />
-                <span className="hidden xl:inline text-slate-200">Logo Theme</span>
-              </button>
-
-              {/* Logo Theme Palette Dropdown */}
-              <AnimatePresence>
-                {paletteOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute right-0 top-12 w-64 p-3 rounded-2xl bg-[#0B131F] border border-slate-700 shadow-2xl z-50 space-y-2"
-                  >
-                    <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-2">
-                      Select Logo & Brand Color Theme
-                    </div>
-                    {themeOptions.map((opt) => (
-                      <button
-                        key={opt.id}
-                        onClick={() => {
-                          changeLogoTheme(opt.id);
-                          setPaletteOpen(false);
-                        }}
-                        className={`w-full p-2 rounded-xl text-left text-xs font-semibold flex items-center justify-between transition-colors ${
-                          logoTheme === opt.id
-                            ? 'bg-slate-800 text-white border border-primary'
-                            : 'text-slate-300 hover:bg-slate-800/60'
-                        }`}
-                      >
-                        <span className="line-clamp-1">{opt.name}</span>
-                        <div className="flex items-center gap-1 flex-shrink-0">
-                          <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: opt.primary }} />
-                          <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: opt.secondary }} />
-                        </div>
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Light / Dark Mode Toggle */}
+          {/* Right Action CTA Buttons & Clean Dark/Light Mode Switcher */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Clean Light / Dark Mode Toggle Button (Moon / Sun) */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors border border-slate-700/60"
-              aria-label="Toggle Mode"
+              className="p-3 rounded-full bg-slate-800/90 dark:bg-slate-800/80 text-slate-200 hover:text-white hover:bg-slate-700 transition-colors border border-slate-700 shadow-md flex items-center justify-center"
+              aria-label="Toggle Light and Dark Theme"
+              title={isDarkMode ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
             >
-              {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-300" />}
+              {isDarkMode ? (
+                <Sun className="w-5 h-5 text-amber-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-indigo-600 fill-indigo-600/20" />
+              )}
             </button>
 
             {/* Pulsing Get Free Quote CTA */}
@@ -185,28 +128,14 @@ export default function Navbar({
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Navigation Buttons */}
           <div className="flex md:hidden items-center gap-2">
             <button
-              onClick={() => {
-                const next: Record<LogoTheme, LogoTheme> = {
-                  classic: 'gold',
-                  gold: 'crimson',
-                  crimson: 'cyan',
-                  cyan: 'classic',
-                };
-                changeLogoTheme(next[logoTheme]);
-              }}
-              className="p-2 rounded-lg bg-slate-800 text-amber-400"
-              title="Cycle Logo Theme"
-            >
-              <Palette className="w-5 h-5 text-primary" />
-            </button>
-            <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-slate-800 text-slate-300"
+              className="p-2.5 rounded-full bg-slate-800/90 text-slate-200 border border-slate-700 shadow-md flex items-center justify-center"
+              aria-label="Toggle Light and Dark Theme"
             >
-              {isDarkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5" />}
+              {isDarkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-indigo-400" />}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -226,7 +155,7 @@ export default function Navbar({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-50 bg-[#0B131F]/98 backdrop-blur-xl md:hidden flex flex-col justify-between p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#0B131F]/98 dark:bg-[#0B131F]/98 backdrop-blur-xl md:hidden flex flex-col justify-between p-6 overflow-y-auto"
           >
             <div className="flex items-center justify-between pb-6 border-b border-slate-800">
               <BrandLogo />

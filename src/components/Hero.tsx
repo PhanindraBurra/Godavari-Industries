@@ -106,7 +106,7 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
       <RainSunCanvas />
 
       {/* Main Hero Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col justify-center min-h-screen">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-44 sm:py-32 flex flex-col justify-center min-h-screen">
         <div className="max-w-3xl">
           {/* Badge */}
           <motion.div
@@ -188,16 +188,16 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
         </div>
       </div>
 
-      {/* Slide Navigation Controls & Progress Bars */}
-      <div className="absolute bottom-10 left-0 right-0 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      {/* Slide Navigation Controls & Progress Bars (Positioned cleanly on mobile without collision) */}
+      <div className="absolute bottom-16 sm:bottom-10 left-0 right-0 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row justify-between items-center gap-4">
         {/* Slide Progress indicators */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
               className="relative h-1.5 rounded-full overflow-hidden transition-all duration-300"
-              style={{ width: currentSlide === index ? '48px' : '16px' }}
+              style={{ width: currentSlide === index ? '36px' : '12px' }}
               aria-label={`Go to slide ${index + 1}`}
             >
               <div
@@ -210,32 +210,32 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
         </div>
 
         {/* Prev / Next Arrows */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={handlePrev}
-            className="p-3 rounded-full bg-slate-900/80 hover:bg-primary text-white backdrop-blur-md border border-slate-700/60 transition-colors"
+            className="p-2.5 sm:p-3 rounded-full bg-slate-900/90 hover:bg-primary text-white backdrop-blur-md border border-slate-700/80 transition-colors shadow-lg"
             aria-label="Previous Slide"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
           <button
             onClick={handleNext}
-            className="p-3 rounded-full bg-slate-900/80 hover:bg-primary text-white backdrop-blur-md border border-slate-700/60 transition-colors"
+            className="p-2.5 sm:p-3 rounded-full bg-slate-900/90 hover:bg-primary text-white backdrop-blur-md border border-slate-700/80 transition-colors shadow-lg"
             aria-label="Next Slide"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
       </div>
 
-      {/* Bouncing Scroll-Down Indicator */}
+      {/* Bouncing Scroll-Down Indicator (Hidden on mobile to avoid overlap, visible on sm+) */}
       <a
         href="#trust-bar"
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-slate-400 hover:text-white transition-colors flex flex-col items-center gap-1 animate-bounce"
+        className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 text-slate-400 hover:text-white transition-colors hidden sm:flex flex-col items-center gap-1 animate-bounce"
         aria-label="Scroll down"
       >
         <span className="text-[10px] tracking-widest uppercase font-medium">Scroll Down</span>
-        <ChevronDown className="w-5 h-5 text-primary" />
+        <ChevronDown className="w-4 h-4 text-primary" />
       </a>
     </section>
   );
