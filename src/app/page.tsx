@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import LenisProvider from '@/components/LenisProvider';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '@/components/Preloader';
@@ -23,36 +23,15 @@ import QuoteModal from '@/components/QuoteModal';
 
 export default function Home() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  // Initialize theme class on mount
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      const root = document.documentElement;
-      if (isDarkMode) {
-        root.classList.remove('light');
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
-        root.classList.add('light');
-      }
-    }
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-  };
 
   return (
     <LenisProvider>
       <CustomCursor />
       <Preloader />
 
-      <main className="min-h-screen transition-colors duration-300 relative">
+      <main className="min-h-screen bg-[#0B131F] text-slate-100 relative">
         <Navbar
           onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
-          isDarkMode={isDarkMode}
-          toggleTheme={toggleTheme}
         />
 
         <Hero onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />

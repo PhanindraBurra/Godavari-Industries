@@ -9,11 +9,7 @@
   --secondary-rgb: 0, 122, 77;
   --accent: #1D5288;
   --accent-rgb: 29, 82, 136;
-}
-
-html.dark {
   --bg-main: #0B131F;
-  --bg-[#070D17]: #070D17;
   --bg-card: #131F33;
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
@@ -21,124 +17,25 @@ html.dark {
   color-scheme: dark;
 }
 
-html.light {
-  --bg-main: #FFFFFF;
-  --bg-[#070D17]: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --text-main: #0F172A;
-  --text-muted: #475569;
-  --border-color: #E2E8F0;
-  color-scheme: light;
-}
-
 body {
-  background-color: var(--bg-main);
-  color: var(--text-main);
+  background-color: #0B131F;
+  color: #F8FAFC;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ========================================================= */
-/* STRICT LIGHT THEME OVERRIDES (PURE WHITE & LIGHT SURFACES) */
-/* ========================================================= */
-
-html.light body,
-html.light main {
-  background-color: #FFFFFF !important;
-  color: #0F172A !important;
-}
-
-/* Transform all dark background utility classes to Pure White / Light Slate */
-html.light .bg-\[\#0B131F\],
-html.light .bg-\[\#070D17\],
-html.light .bg-\[\#050A12\],
-html.light .bg-[#070D17],
-html.light .bg-[#0B131F],
-html.light .bg-[#050A12],
-html.light .bg-slate-950,
-html.light .bg-slate-900,
-html.light .bg-slate-900\/90,
-html.light .bg-slate-900\/80,
-html.light .bg-slate-900\/60,
-html.light .bg-slate-900\/40,
-html.light .bg-slate-800,
-html.light .bg-slate-800\/90,
-html.light .bg-slate-800\/80,
-html.light .bg-slate-800\/50,
-html.light .bg-[#0B131F]\/95,
-html.light .bg-[#0B131F]\/90,
-html.light .bg-[#0B131F]\/85 {
-  background-color: #FFFFFF !important;
-  color: #0F172A !important;
-}
-
-/* Soft light gray background for alternating card containers in Light Mode */
-html.light .bg-slate-900\/60,
-html.light .bg-slate-900\/40,
-html.light .bg-slate-950 {
-  background-color: #F8FAFC !important;
-}
-
-/* Typography contrast in Light Mode */
-html.light h1, html.light h2, html.light h3, html.light h4, html.light h5, html.light h6,
-html.light .text-white,
-html.light .text-slate-100,
-html.light .text-slate-200 {
-  color: #0F172A !important;
-}
-
-html.light p,
-html.light span:not(.text-primary):not(.text-secondary):not(.text-emerald-400):not(.text-amber-400),
-html.light .text-slate-300,
-html.light .text-slate-400 {
-  color: #334155 !important;
-}
-
-/* Border overrides in Light Mode */
-html.light .border-slate-800,
-html.light .border-slate-700,
-html.light .border-slate-900,
-html.light .border-white\/10,
-html.light .border-white\/20 {
-  border-color: #E2E8F0 !important;
-}
-
-/* Hero gradient overlays in Light Mode */
-html.light #hero .bg-gradient-to-t {
-  background: linear-gradient(to top, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 60%, rgba(255, 255, 255, 0.4) 100%) !important;
-}
-html.light #hero .bg-gradient-to-r {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 60%, transparent 100%) !important;
-}
-
-/* Navbar in Light Mode */
-html.light header {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border-bottom-color: #E2E8F0 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-html.light nav a {
-  color: #1E293B !important;
-}
-html.light nav a:hover {
-  color: var(--primary) !important;
-}
-
-/* Footer in Light Mode */
-html.light footer {
-  background-color: #F8FAFC !important;
-  border-top-color: #E2E8F0 !important;
-  color: #334155 !important;
+/* Selection Color */
+::selection {
+  background-color: var(--primary);
+  color: #FFFFFF;
 }
 
 /* Glassmorphism utility */
 .glass-panel {
-  background: rgba(var(--bg-card-raw), 0.85);
+  background: rgba(19, 31, 51, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Shimmer animation */
@@ -171,16 +68,11 @@ html.light footer {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-main);
+  background: #070D17;
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
   border-radius: 5px;
-}
-
-::selection {
-  background-color: var(--primary);
-  color: #FFFFFF;
 }
 
 /* Hide scrollbar utility */
